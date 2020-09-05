@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ESO.Scraper.Models;
+using System;
+using System.Diagnostics;
 
 namespace ESO.Scraper
 {
@@ -6,8 +8,13 @@ namespace ESO.Scraper
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.Clear();
+            Item item = new Item(11971, "Kernholz");
+            DownloadTTC dl = new DownloadTTC(item);
+            dl.Start();
             Console.WriteLine("Second Line");
-            }
+            Console.ReadLine();
+            Main(null);
+        }
     }
 }
